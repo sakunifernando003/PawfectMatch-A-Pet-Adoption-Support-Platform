@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find a Vet - PawfectMatch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+    <style>
+        body {
+            background: #fffdf5;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .vet-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .page-title {
+            text-align: center;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 25px;
+        }
+
+        #map {
+            height: 500px;
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+            margin-bottom: 30px;
+        }
+
+        .leaflet-popup-content h6 {
+            margin: 0;
+            font-weight: 600;
+            color: #111827;
+        }
+
+        .leaflet-popup-content p {
+            margin: 2px 0;
+            font-size: 0.9rem;
+            color: #374151;
+        }
+
+        .btn-contact {
+            background: #22c55e;
+            color: #fff;
+            font-weight: 600;
+            border-radius: 10px;
+            padding: 6px 12px;
+            font-size: 0.85rem;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-contact:hover {
+            background: #16a34a;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+
+<div class="vet-container">
+    <h2 class="page-title">🐾 Find a <span class="text-warning">Vet Near You</span></h2>
+
+    <!-- Sri Lanka Map -->
+    <div id="map"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+    // Initialize map (centered on Sri Lanka)
+    var map = L.map('map').setView([7.8731, 80.7718], 7);
+
+    // Add OpenStreetMap tiles
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '© OpenStreetMap contributors'
+    }).addTo(map);
+
+    // Vet locations (example data)
+    var vets = [
+        {
+            name: "Happy Paws Clinic",
+            location: "Colombo",
+            services: "Vaccination, Surgery, Grooming",
+            coords: [6.9271, 79.8612]
+        },
+        {
+            name: "Pawfect Care Hospital",
+            location: "Kandy",
+            services: "Emergency, Dental, Surgery",
+            coords: [7.2906, 80.6337]
+        },
+        {
+            name: "Animal Wellness Center",
+            location: "Galle",
+            services: "Checkups, Grooming, Nutrition",
+            coords: [6.0535, 80.2210]
+        }
+    ];
+
+    // Add markers for each vet
+    vets.forEach(vet => {
+        L.marker(vet.coords).addTo(map)
+            .bindPopup(`
+          <h6>${vet.name}</h6>
+          <p><strong>Location:</strong> ${vet.location}</p>
+          <p><strong>Services:</strong> ${vet.services}</p>
+          <a href="#" class="btn-contact">Contact Now</a>
+        `);
+    });
+</script>
+</body>
+</html>
