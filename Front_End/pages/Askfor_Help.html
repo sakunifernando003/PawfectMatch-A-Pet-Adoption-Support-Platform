@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Corner - PawfectMatch</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #fffaf4;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .page-header {
+            background-color: #fde68a; /* lighter yellow tone */
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .page-header h2 {
+            color: #1f2937;
+            font-weight: bold;
+        }
+        .btn-custom {
+            background-color: #1f2937;
+            color: #fbbf24;
+            border-radius: 10px;
+        }
+        .btn-custom:hover {
+            background-color: #111827;
+            color: #fff;
+        }
+        .list-group-item {
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+        .card {
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container mt-4">
+
+    <!-- Header -->
+    <div class="page-header">
+        <h2>Help Corner 🆘</h2>
+        <p>Ask questions, share advice, and support fellow pet lovers.</p>
+        <a href="#askHelpForm" class="btn btn-custom">Ask for Help</a>
+    </div>
+
+    <!-- Popular Questions -->
+    <h4 class="mb-3">Popular Questions</h4>
+    <div class="list-group mb-4">
+        <a href="#" class="list-group-item list-group-item-action">❗ My puppy refuses to eat – what should I do?</a>
+        <a href="#" class="list-group-item list-group-item-action">😿 Found a kitten with an eye infection — advice?</a>
+        <a href="#" class="list-group-item list-group-item-action">🐶 Looking for low-cost vaccinations in Kandy</a>
+        <a href="#" class="list-group-item list-group-item-action">🐾 How to calm an anxious rescue dog?</a>
+    </div>
+
+    <!-- Ask for Help Form -->
+    <div id="askHelpForm" class="card p-4 mb-5">
+        <h5 class="mb-3">Ask for Help</h5>
+        <form>
+            <div class="mb-3">
+                <label for="title" class="form-label">Question Title</label>
+                <input type="text" class="form-control" id="title" placeholder="e.g., My cat isn’t eating...">
+            </div>
+            <div class="mb-3">
+                <label for="details" class="form-label">Details</label>
+                <textarea class="form-control" id="details" rows="4" placeholder="Provide more information about your concern..."></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="category" class="form-label">Category</label>
+                <select class="form-select" id="category">
+                    <option>Health</option>
+                    <option>Training</option>
+                    <option>Nutrition</option>
+                    <option>Lost & Found</option>
+                    <option>General Advice</option>
+                </select>
+            </div>
+            <button type="submit" class="btn btn-custom">Submit Question</button>
+        </form>
+    </div>
+
+    <!-- Recent Discussions -->
+    <h4 class="mb-3">Recent Discussions</h4>
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action">🐕 Tips on house-training a puppy – 8 replies</a>
+        <a href="#" class="list-group-item list-group-item-action">🐱 Safe home remedies for cat fleas? – 5 replies</a>
+        <a href="#" class="list-group-item list-group-item-action">🦴 Best chew toys for teething pups – 3 replies</a>
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

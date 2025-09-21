@@ -10,13 +10,34 @@
             background-color: #fffaf4;
             font-family: 'Segoe UI', sans-serif;
         }
-        .welcome-banner {
+        .navbar {
+            background-color: #fbbf24; /* Yellow header */
+        }
+        .navbar-brand {
+            font-weight: bold;
+            color: #1f2937 !important;
+        }
+        .nav-link {
+            color: #1f2937 !important;
+        }
+        .nav-link:hover {
+            color: #fff !important;
+        }
+        .dropdown-menu {
+            border-radius: 10px;
+        }
+        .dropdown-item:hover {
             background-color: #fbbf24;
+            color: #1f2937 !important;
+        }
+        .welcome-banner {
+            background-color: #fde68a; /* lighter yellow tone */
             padding: 40px;
             border-radius: 15px;
             color: #1f2937;
             text-align: center;
         }
+
         .section-title {
             font-weight: bold;
             color: #1f2937;
@@ -34,18 +55,74 @@
             border-top-left-radius: 10px;
             border-top-right-radius: 10px;
         }
+
+        .card-img-top {
+            height: 250px;           /* fixed height */
+            object-fit: cover;       /* crops image nicely */
+            width: 100%;             /* takes full card width */
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+
     </style>
 </head>
 <body>
 
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">🐾 PawfectMatch</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav ms-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="pages/Dashboard.html">Dashboard</a>
+                </li>
+
+                <!-- Dropdown Menu -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
+                        Services
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="pages/Lost%20Pets.html">Lost a Pet</a></li>
+                        <li><a class="dropdown-item" href="pages/Found%20Pet.html">Found a Pet</a></li>
+                        <li><a class="dropdown-item" href="pages/Donation%20Page.html">Donate</a></li>
+                        <li><a class="dropdown-item" href="pages/Vet%20Page.html">Find a Vet</a></li>
+                    </ul>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="pages/Article_Page.html">Articles</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="pages/Help.html">Help Corner</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="pages/User%20profile%20Page.html">Profile</a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Main Content -->
 <div class="container mt-5">
 
     <!-- Welcome Banner -->
     <div class="welcome-banner mb-4">
-        <h2>Welcome back, Sakuni! 🐾</h2>
+        <h2>Welcome back! 🐾</h2>
         <p class="mb-3">Ready to help or be helped in the pet community?</p>
-        <a href="#" class="btn btn-custom me-2">Browse Pets</a>
-        <a href="#" class="btn btn-outline-dark">Post a Pet</a>
+        <a href="pages/Brows_Pets.html" class="btn btn-custom me-2">Browse Pets</a>
+        <a href="pages/Post%20Pets.html" class="btn btn-outline-dark">Post a Pet</a>
     </div>
 
     <!-- Featured Pets -->
@@ -87,16 +164,16 @@
     <h4 class="section-title mb-3">Quick Access</h4>
     <div class="row text-center mb-5">
         <div class="col-md-3 mb-3">
-            <a href="#" class="btn btn-outline-dark w-100">Lost a Pet</a>
+            <a href="pages/Lost%20Pets.html" class="btn btn-outline-dark w-100">Lost a Pet</a>
         </div>
         <div class="col-md-3 mb-3">
-            <a href="#" class="btn btn-outline-dark w-100">Found a Pet</a>
+            <a href="pages/Found%20Pet.html" class="btn btn-outline-dark w-100">Found a Pet</a>
         </div>
         <div class="col-md-3 mb-3">
-            <a href="#" class="btn btn-outline-dark w-100">Donate</a>
+            <a href="pages/Donation%20Page.html" class="btn btn-outline-dark w-100">Donate</a>
         </div>
         <div class="col-md-3 mb-3">
-            <a href="#" class="btn btn-outline-dark w-100">Find a Vet</a>
+            <a href="pages/Vet%20Page.html" class="btn btn-outline-dark w-100">Find a Vet</a>
         </div>
     </div>
 
@@ -107,7 +184,7 @@
         <a href="#" class="list-group-item list-group-item-action">🐕 Best Homemade Food Recipes for Dogs</a>
         <a href="#" class="list-group-item list-group-item-action">🐾 5 Ways to Bond with a New Rescue Pet</a>
         <div class="mt-2 text-end">
-            <a href="#" class="btn btn-custom btn-sm">Write an Article</a>
+            <a href="pages/Article_Page.html" class="btn btn-custom btn-sm">Write an Article</a>
         </div>
     </div>
 
@@ -118,13 +195,13 @@
         <a href="#" class="list-group-item list-group-item-action">😿 Found a kitten with an eye infection — advice?</a>
         <a href="#" class="list-group-item list-group-item-action">🐶 Looking for low-cost vaccinations in Kandy</a>
         <div class="mt-2 text-end">
-            <a href="#" class="btn btn-custom btn-sm">Ask for Help</a>
+            <a href="pages/Askfor_Help.html" class="btn btn-custom btn-sm">Ask for Help</a>
         </div>
     </div>
 
     <!-- Success Stories -->
     <h4 class="section-title mb-3">Recent Success Stories</h4>
-    <div class="row">
+    <div class="row mb-3">
         <div class="col-md-6">
             <div class="alert alert-success">
                 🐾 “We found Bruno through PawfectMatch — he’s the best boy!” – Nadeesha
@@ -136,6 +213,62 @@
             </div>
         </div>
     </div>
+
+    <!-- Share Story Button -->
+    <div class="text-end">
+        <a href="pages/Success_Stories.html" class="btn btn-custom btn-sm">Share Your Story</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-5" style="background-color:#fde68a; border-top: 2px solid #fbbf24;">
+        <div class="container py-4">
+            <div class="row">
+
+                <!-- About -->
+                <div class="col-md-4 mb-3">
+                    <h5 class="text-dark">PawfectMatch 🐾</h5>
+                    <p class="text-muted">
+                        Connecting pets with loving homes.
+                        Join our community and make a difference in a pet’s life today.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-4 mb-3">
+                    <h6 class="text-dark">Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="pages/Brows_Pets.html" class="text-dark text-decoration-none">Browse Pets</a></li>
+                        <li><a href="pages/Post%20Pets.html" class="text-dark text-decoration-none">Post a Pet</a></li>
+                        <li><a href="pages/Donation%20Page.html" class="text-dark text-decoration-none">Donate</a></li>
+                        <li><a href="pages/Vet%20Page.html" class="text-dark text-decoration-none">Find a Vet</a></li>
+                        <li><a href="pages/HelpCorner.html" class="text-dark text-decoration-none">Help Corner</a></li>
+                    </ul>
+                </div>
+
+                <!-- Social -->
+                <div class="col-md-4 mb-3">
+                    <h6 class="text-dark">Follow Us</h6>
+                    <a href="#" class="text-dark me-3"><i class="bi bi-facebook"></i> Facebook</a><br>
+                    <a href="#" class="text-dark me-3"><i class="bi bi-instagram"></i> Instagram</a><br>
+                    <a href="#" class="text-dark"><i class="bi bi-twitter-x"></i> Twitter</a>
+                </div>
+
+            </div>
+
+            <hr style="border-top: 1px solid #fbbf24;">
+            <div class="text-center">
+                <p class="mb-0 text-muted">&copy; 2025 PawfectMatch. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
 
 </div>
 
