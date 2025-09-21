@@ -82,13 +82,21 @@
             font-size: 0.9rem;
             color: #6b7280;
         }
+
+        /* Preview images */
+        #imagePreview, #uploadedImage {
+            max-width: 200px;
+            display: none;
+            margin-top: 10px;
+            border-radius: 8px;
+        }
     </style>
 </head>
 <body>
 
 <div class="post-container">
     <h2 class="form-title">🐾 Post a Pet for Adoption</h2>
-    <form action="#" method="post" enctype="multipart/form-data">
+    <form id="postPetForm" enctype="multipart/form-data">
 
         <!-- Pet Image Upload -->
         <div class="mb-4">
@@ -97,6 +105,7 @@
                 <input type="file" id="petImage" name="petImage" accept="image/*" required>
                 <span>📷 Click or drag a file here to upload</span>
             </label>
+            <img id="imagePreview" alt="Preview">
         </div>
 
         <!-- Pet Name -->
@@ -153,12 +162,20 @@
         </div>
 
         <!-- Submit -->
-        <div class="d-grid">
+        <div class="d-grid mb-3">
             <button type="submit" class="btn btn-custom">Post Pet</button>
+        </div>
+
+        <!-- Uploaded Image -->
+        <div>
+            <p>Uploaded Image:</p>
+            <img id="uploadedImage" alt="Uploaded">
         </div>
     </form>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="js/postPet.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
